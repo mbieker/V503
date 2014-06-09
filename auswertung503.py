@@ -88,7 +88,7 @@ s=0.0005
 # Erste Tabelle erstellen (Messwerttabelle)
 print "Tabelle 1:"
 data=array([tnull,tauf,tab,R]).T
-print make_LaTeX_table(data,[r'U[V]', r'N', r't[s]', r'$\sigma_{I,rel}$[\%]'], flip= 'false', onedim = 'false')
+print make_LaTeX_table(data,[r'$t_{Null}$[s]', r'$t_{auf}$[s]', r'$t_{ab}$[s]', r'R[M$\omega$]'], flip= 'false', onedim = 'false')
 vnull=s/tnull
 vauf=s/tauf
 vab=s/tab
@@ -102,7 +102,9 @@ tnull, tauf, tab, R , temp, visko= loadtxt("dataA2.txt", unpack=True)
 vnull=s/tnull
 vauf=s/tauf
 vab=s/tab
-
+test1=2*vnull
+test2=vab-vauf
+test=test2/test1
 # Viskositaet in SI umrechnen:
 visk=visko*10**(-5)
 
@@ -132,6 +134,10 @@ q=0.03*pi*viskkorr*((9*viskkorr*(vab-vauf))/(4*g*(rhoOel-rhoLuft)))**(0.5) *((va
 print "Ladungen:"
 print q
 
+print "Tabelle 2:"
+data=array([vauf,vab,temp,visk,viskkorr,r,q]).T
+print make_LaTeX_table(data,[r'$v_{auf}$[m/s]',r'$v_{ab}$[m/s]', r'T[$^\circ C$]', r'$\eta_{L}[10^{-5}Nsm^{-2}]$',r'$\eta[10^{-5}Nsm^{-2}]$',r'r[m]',r'q[C]'], flip= 'false', onedim = 'false')
+
 # Erster Plot
 plt.xlabel('gemessene Ladungen [C]')
 plt.xlim(0,6*10**(-19))
@@ -140,6 +146,9 @@ plt.show()
 plt.savefig("plot1.png")
 plt.close()
 
+print "Tabelle 2:"
+data=array([vauf,vab,temp,visk,viskkorr,r,q]).T
+print make_LaTeX_table(data,[r'$v_{auf}$[m/s]',r'$v_{ab}$[m/s]', r'T[$^\circ C$]', r'$\eta_{L}[10^{-5}Nsm^{-2}]$',r'$\eta[10^{-5}Nsm^{-2}]$',r'r[m]',r'q[C]'], flip= 'false', onedim = 'false')
 
 # Auswertung Teil B
 
@@ -148,7 +157,7 @@ tab, tauf, R, temp, visko= loadtxt("dataC.txt", unpack=True)
 s=0.0005
 
 # Zweite Tabelle erstellen (Messwerttabelle)
-print "Tabelle 1:"
+print "Tabelle 3:"
 data=array([tauf,tab,R]).T
 print make_LaTeX_table(data,[r'N', r't[s]', r'$\sigma_{I,rel}$[\%]'], flip= 'false', onedim = 'false')
 
@@ -166,7 +175,7 @@ r = ((9*visk*(vab-vauf))/(2*g*(rhoOel-rhoLuft)))**0.5
 print "Radien:"
 print r
 
-# Korrektur der Viskose, dabei in SI umgerechnet...
+# Korrektur der Viskose, dabei in SI umgerechnet
 b=(6.17*133.322)*10**(-5)
 viskkorr=visk*(1/(1+(b/(101325*r))))
 
@@ -185,6 +194,13 @@ plt.plot(q,[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],'.')
 plt.show()
 plt.savefig("plot2.png")
 plt.close()
+
+print "Tabelle 4:"
+data=array([vauf,vab,temp,visk,viskkorr,r,q]).T
+print make_LaTeX_table(data,[r'$v_{auf}$[m/s]',r'$v_{ab}$[m/s]', r'T[$^\circ C$]', r'$\eta_{L}[10^{-5}Nsm^{-2}]$',r'$\eta[10^{-5}Nsm^{-2}]$',r'r[m]',r'q[C]'], flip= 'false', onedim = 'false')
+
+
+
 
 print "AUSWERTUNG TEIL C:"
 #Auswertung Teil C
