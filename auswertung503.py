@@ -128,13 +128,13 @@ print viskkorr
 
 # Berechnung der Ladung
 
-q=3*pi*viskkorr*((9*viskkorr*(vab-vauf))/(4*g*(rhoOel-rhoLuft)))**(0.5) *((vab+vauf)/(297))
+q=0.03*pi*viskkorr*((9*viskkorr*(vab-vauf))/(4*g*(rhoOel-rhoLuft)))**(0.5) *((vab+vauf)/(297))
 print "Ladungen:"
 print q
 
 # Erster Plot
 plt.xlabel('gemessene Ladungen [C]')
-plt.xlim(0,6*10**(-17))
+plt.xlim(0,6*10**(-19))
 plt.plot(q,[1,1,1,1,1,1,1,1,1,1,1],'.')
 plt.show()
 plt.savefig("plot1.png")
@@ -174,20 +174,40 @@ viskkorr=visk*(1/(1+(b/(101325*r))))
 
 # Berechnung der Ladung
 
-q=3*pi*viskkorr*((9*viskkorr*(vab-vauf))/(4*g*(rhoOel-rhoLuft)))**(0.5) *((vab+vauf)/(150))
+q=0.03*pi*viskkorr*((9*viskkorr*(vab-vauf))/(4*g*(rhoOel-rhoLuft)))**(0.5) *((vab+vauf)/(150))
 print "Ladungen:"
 print q
 
 # Zweiter Plot
 plt.xlabel('gemessene Ladungen [C]')
-plt.xlim(0,9*10**(-17))
+plt.xlim(0,9*10**(-19))
 plt.plot(q,[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],'.')
 plt.show()
 plt.savefig("plot2.png")
 plt.close()
 
+print "AUSWERTUNG TEIL C:"
+#Auswertung Teil C
+# Messwerte einlesen
+tnull, tauf, tab, R, temp, visko= loadtxt("dataB.txt", unpack=True)
+s=0.0005
 
+Tab=(tab[0]+tab[1]+tab[2])/3
+Tauf=(tauf[0]+tauf[1]+tauf[2])/3
+vab=s/Tab
+vauf=s/Tauf
 
+visk=visko[0]*10**(-5)
+
+r = ((9*visk*(vab-vauf))/(2*g*(rhoOel-rhoLuft)))**0.5
+
+# Korrektur der Viskose, dabei in SI umgerechnet...
+b=(6.17*133.322)*10**(-5)
+viskkorr=visk*(1/(1+(b/(101325*r))))
+
+q=0.03*pi*viskkorr*((9*viskkorr*(vab-vauf))/(4*g*(rhoOel-rhoLuft)))**(0.5) *((vab+vauf)/(150))
+print "Ladungen:"
+print q
 
 '''
 # Erster Plot
