@@ -72,7 +72,7 @@ Da das Feld durch einen Kondensator erzeugt wird gilt:
 Dabei wird die Richtung der Kraft durch die Polung der Spannung am Kondensator bestimmt. Abbildung \ref{feldgg} zeigt die angreifenden Kräfte bei den verschiedenen Richtungen des Feldes mit den Gleichgewichtsgeschwindigkeiten $v_-$ und $v_+$. 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.35]{/home/martin/Dokumente/SS14/Praktikum/V503/abb1.png}
+\includegraphics[scale=0.35]{abb1.png}
 \caption{Kräftegleichgewichte bei verschiedenen Richtungen des elektrischen Feldes.[1]}
 \label{feldgg}
 \end{figure}
@@ -111,7 +111,7 @@ Abblildung \ref{aufbau} zeigt den Aufbau der Versuchsapparatur.
 
 \begin{figure}[htp]
 \centering
-\includegraphics[scale=0.50]{/home/martin/Dokumente/SS14/Praktikum/V503/abb2.png}
+\includegraphics[scale=0.50]{abb2.png}
 \caption{Schematischer Aufbau der Milikan-Apparatur.[1]}
 \label{aufbau}
 \end{figure}
@@ -153,6 +153,11 @@ U_C = \SI{}{\volt}
 gesenkt. Für 15 weitere Tröpfchen werden die Laufzeiten bei eingeschalteter Spannung $t_+$ und $t_-$ bestimmt.
 \section{Auswertung}
 \subsection{Auswertung für $U=\SI{297}{\volt}$}
+Die aufgenommenen Messwerte sind in Tabelle 1 abgebildet. In Tabelle 2 befinden sich die berechneten Ergebnisse und Zwischenergebnisse für alle Werte, bei denen
+\begin{equation}
+0.7 < \frac{v_{ab}-v_{auf}}{2 v_0} < 1.3
+\end{equation}
+gilt. Dadurch werden Werte aussortiert, bei denen sich die Ladung während der Beobachtung geändert hat.
 \begin{table}[H]
 \centering
 \begin{tabular}{cccc}
@@ -205,8 +210,19 @@ gesenkt. Für 15 weitere Tröpfchen werden die Laufzeiten bei eingeschalteter Sp
 \label{}
 \caption{Auswertung für $U=\SI{297}{\volt}$}
 \end{table}
+\noindent
+Die Werte für die Vielfachen der Elementarladung sind grafisch in Abbildung \ref{plot1a} dargestellt.
+\begin{figure}[h]
+\hspace{-1.5cm}
+\includegraphics[scale=0.9]{plot1a.png}
+\caption{Errechnete Ladungen bei $U=\SI{297}{\volt}$}
+\label{plot1a}
+\end{figure}
+Die Werte lassen sich in drei Messwertgruppen aufteilen. Die erste Gruppe, bestehend aus zwei Messwerten, liegt bei ca. $\SI{1.6e-19}{\coulomb}$. Damit liegt sie Nahe an dem theoretischen Wert der Elementarladung von  $\SI{1.602e-19}{\coulomb}$. Die anderen Messwertgruppen müssten daher bei ca.  $\SI{3.2e-19}{\coulomb}$ und  $\SI{4.8e-19}{\coulomb}$ liegen. Leider sind die Abweichungen hier größer. Um einen sinnvollen Mittelwert bilden zu können, bräuchte es aufgrund der hohen Messfehler mehr Messwerte. 
 
-\subsection{Auswertung für $U=\SI{297}{\volt}$}
+\subsection{Auswertung für $U=\SI{150}{\volt}$}
+Die aufgenommenen Messwerte sind in Tabelle 3 abgebildet. In Tabelle 4 befinden sich die berechneten Ergebnisse und Zwischenergebnisse für alle Werte. Da hier die Geschwindigkeit der Tröpfchen nicht ohne elektrisches Feld gemessen wurde, werden hier auch Messungen berücksichtigt, bei denen sich die Ladung des Tröpfchens verändert haben könnte.
+
 \begin{table}[H]
 \centering
 \begin{tabular}{ccc}
@@ -235,7 +251,7 @@ gesenkt. Für 15 weitere Tröpfchen werden die Laufzeiten bei eingeschalteter Sp
 \end{table}
 
 \begin{table}[H]
-\centering
+\hspace{-1.cm}
 \begin{tabular}{ccccccc}
 \toprule
 {$v_{auf}$[$10^{-5}$m/s]} &{ $v_{ab}$[$10^{-5}$m/s]} &{ T[$^\circ C$]} &{ $\eta_{L}[10^{-5}Nsm^{-2}]$} &{ $\eta[10^{-5}Nsm^{-2}]$} &{ r[$10^{-7}$m]} &{ q[$10^{-19}$C] }\\
@@ -258,9 +274,17 @@ gesenkt. Für 15 weitere Tröpfchen werden die Laufzeiten bei eingeschalteter Sp
 \bottomrule
 \end{tabular}
 \label{}
-\caption{}
+\caption{Auswertung für $U=\SI{150}{\volt}$}
 \end{table}
-
+\noindent
+In Abbildung \ref{plot2a} sind die Ergebnisse graphisch dargestellt.
+\begin{figure}[h]
+\hspace{-1.5cm}
+\includegraphics[scale=0.9]{plot2a.png}
+\caption{Errechnete Ladungen bei $U=\SI{150}{\volt}$}
+\label{plot2a}
+\end{figure}
+Hier ist keine Regelmäßigkeit zu erkennen, fehlerhafte Werte sind nicht von guten Werten zu unterscheiden. Außerdem liegen mehrere Werte unter dem Wert der Elementarladung.
 \section{Diskussion}
 
 \section{Quellen}

@@ -139,8 +139,9 @@ data=array([vauf,vab,temp,visk,viskkorr,r,q]).T
 print make_LaTeX_table(data,[r'$v_{auf}$[m/s]',r'$v_{ab}$[m/s]', r'T[$^\circ C$]', r'$\eta_{L}[10^{-5}Nsm^{-2}]$',r'$\eta[10^{-5}Nsm^{-2}]$',r'r[m]',r'q[C]'], flip= 'false', onedim = 'false')
 
 # Erster Plot
+plt.ylim(0,100)
 plt.xlabel('gemessene Ladungen [C]')
-plt.xlim(0,6*10**(-19))
+plt.xlim(0,6.1*10**(-19))
 plt.plot(q,[1,1,1,1,1,1,1,1,1,1,1],'.')
 plt.show()
 plt.savefig("plot1.png")
@@ -188,6 +189,7 @@ print "Ladungen:"
 print q
 
 # Zweiter Plot
+plt.ylim(0,100)
 plt.xlabel('gemessene Ladungen [C]')
 plt.xlim(0,9*10**(-19))
 plt.plot(q,[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],'.')
